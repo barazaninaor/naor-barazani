@@ -2,7 +2,8 @@
 const translations = {
   en: {
     title: "Naor Barazani",
-    subtitle: "KickstartX Candidate | xEngineer",
+    subtitle:
+      "Full-Stack Developer (Technion Student) | Logic & Automation Specialist",
     cv: "View CV",
     cover: "Cover Letter",
     pdf: "Download PDF",
