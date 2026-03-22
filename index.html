@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Naor Barazani | xEngineer Candidate</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Wix+Madefor+Display:wght@400;500;700;800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="index-page lang-he">
+    <header class="header">
+      <div class="lang-switch">
+        <button class="lang-btn" id="btn-en" onclick="setLanguage('en')">
+          English
+        </button>
+        <button class="lang-btn active" id="btn-he" onclick="setLanguage('he')">
+          עברית
+        </button>
+      </div>
+    </header>
+
+    <main class="main-content">
+      <div class="profile-container">
+        <img src="naor.jpg" alt="Naor Barazani" class="profile-img" />
+      </div>
+      <h1 class="hero-title" id="text-title">נאור ברזני</h1>
+      <p class="hero-subtitle" id="text-subtitle">
+        מועמד לתוכנית KickstartX | xEngineer
+      </p>
+
+      <div class="cta-buttons">
+        <a href="cv.html" class="btn-main btn-cv" id="text-cv">קורות חיים</a>
+        <a href="coverletter.html" class="btn-main btn-cover" id="text-cover"
+          >מכתב מקדים</a
+        >
+      </div>
+    </main>
+
+    <div class="pdf-download">
+      <a href="Naor_Barazani_CV.pdf" download class="btn-pdf">
+        <svg
+          width="16"
+          height="16"
+          viewBox="0 0 16 16"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path d="M8 11L3 6H6V1H10V6H13L8 11Z" fill="white" />
+          <path d="M1 13H15V15H1V13Z" fill="white" />
+        </svg>
+        <span id="text-pdf">הורד PDF</span>
+      </a>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
