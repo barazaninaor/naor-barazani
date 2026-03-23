@@ -789,3 +789,19 @@ body.en-version {
     width: fit-content;
   }
 }
+
+.en-version {
+  direction: ltr;
+  text-align: left;
+}
+
+/* מוודא שהכפתורים של השפה נשארים במקום הנכון גם באנגלית */
+.en-mode .main-nav {
+  direction: ltr;
+  flex-direction: row;
+}
+
+.en-mode .nav-links {
+  margin-right: auto;
+  margin-left: 0;
+}

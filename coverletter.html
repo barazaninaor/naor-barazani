@@ -13,8 +13,12 @@
   <body class="subpage">
     <header class="main-nav">
       <div class="lang-switch">
-        <button class="lang-btn active">עברית</button>
-        <a href="cover-letter-en.html" class="lang-btn">English</a>
+        <button id="btn-he" class="lang-btn active" onclick="switchLang('he')">
+          עברית
+        </button>
+        <button id="btn-en" class="lang-btn" onclick="switchLang('en')">
+          English
+        </button>
       </div>
 
       <nav class="nav-links">
@@ -25,7 +29,7 @@
       <div class="nav-spacer"></div>
     </header>
 
-    <section class="content-section cover-letter-text">
+    <section id="content-he" class="content-section cover-letter-text">
       <h1>המסלול שלי לעולם הפיתוח</h1>
 
       <p class="intro">
@@ -75,5 +79,98 @@
         <strong>נאור ברזני</strong>
       </p>
     </section>
+
+    <section
+      id="content-en"
+      class="cover-letter-text en-version"
+      style="display: none"
+    >
+      <h1>My Journey into Software Development</h1>
+
+      <p class="intro">
+        <strong>Nice to meet you, I'm Naor.</strong>
+      </p>
+
+      <p>
+        My transition into software development is more than a career change; it
+        is a natural evolution of how I approach problem-solving. My
+        professional path began in the worlds of Finance and Philosophy—fields
+        that may seem distant from coding, but in practice, they are what shaped
+        my mindset as a developer.
+      </p>
+
+      <p>
+        During my <strong>two degrees in Philosophy</strong>, I specialized in
+        the logical analysis of abstract systems and complex structures. This
+        exact skill set is what I apply today when building software
+        architecture and tackling algorithmic challenges. For me, writing code
+        is a direct extension of formal logic—the ability to take a broad
+        problem and deconstruct it into precise, efficient components.
+      </p>
+
+      <p>
+        In my role as a <strong>Financial Analyst</strong>, I recognized the
+        power of technology as a tool for real change. When I built
+        <strong>Excel-based automation tools</strong> that processed vast
+        amounts of data for our entire client base, I managed to reduce the
+        team's monthly workload by 50%. This success, along with developing
+        <strong>dedicated web-based calculators</strong> for complex financial
+        maneuvers, made it clear that my true passion lies in building the tools
+        that analyze data and make it accessible and intelligent.
+      </p>
+
+      <p>
+        Currently, as a student at the
+        <strong>Technion Continuing Education</strong>, I am focused on building
+        products with an emphasis on clean code, responsiveness, and
+        high-quality user experience. I believe in an
+        <strong>AI-Native approach</strong>—leveraging advanced artificial
+        intelligence tools to streamline development processes and build
+        smarter, faster products.
+      </p>
+
+      <p>
+        I am looking for my next challenge within a development team that
+        strives for technical excellence, where I can integrate my analytical
+        capabilities with my practical knowledge of
+        <strong>JavaScript, Node.js, and SQL</strong> to create a real impact.
+      </p>
+
+      <div class="closing">
+        <p>Best Regards,</p>
+        <strong>Naor Barazani</strong>
+      </div>
+    </section>
+
+    <script>
+      function switchLang(lang) {
+        const contentHe = document.getElementById("content-he");
+        const contentEn = document.getElementById("content-en");
+        const btnHe = document.getElementById("btn-he");
+        const btnEn = document.getElementById("btn-en");
+
+        if (lang === "en") {
+          contentHe.style.display = "none";
+          contentEn.style.display = "block";
+          btnEn.classList.add("active");
+          btnHe.classList.remove("active");
+          document.body.classList.add("en-mode");
+        } else {
+          contentHe.style.display = "block";
+          contentEn.style.display = "none";
+          btnHe.classList.add("active");
+          btnEn.classList.remove("active");
+          document.body.classList.remove("en-mode");
+        }
+      }
+
+      window.onload = function () {
+        const urlParams = new URLSearchParams(window.location.search);
+        const lang = urlParams.get("lang") || "he"; // ברירת מחדל עברית
+        if (typeof switchLang === "function") {
+          switchLang(lang);
+        }
+      };
+    </script>
   </body>
 </html>

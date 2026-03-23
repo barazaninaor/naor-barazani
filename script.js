@@ -3,7 +3,7 @@ const translations = {
   en: {
     title: "Naor Barazani",
     subtitle:
-      "Full-Stack Developer (Technion Student) | Logic & Automation Specialist",
+      "Full-Stack Developer Student @ Technion | Logic & Automation Specialist", // עדכון קטן לניסוח שדיברנו עליו
     cv: "View CV",
     cover: "Cover Letter",
     pdf: "Download PDF",
@@ -11,7 +11,8 @@ const translations = {
   },
   he: {
     title: "נאור ברזני",
-    subtitle: "מועמד לתוכנית KickstartX | xEngineer",
+    subtitle:
+      "מפתח Full-Stack (סטודנט בטכניון) | מתמחה באוטומציה ופתרון בעיות לוגיות",
     cv: "קורות חיים",
     cover: "מכתב מקדים",
     pdf: "הורד PDF",
@@ -19,22 +20,23 @@ const translations = {
   },
 };
 
-/**
- * Handles language switching and UI direction updates
- * @param {string} lang - Selected language ('en' or 'he')
- */
 function setLanguage(lang) {
   const t = translations[lang];
 
-  // Update text content across the UI
+  // Update text content
   document.getElementById("text-title").textContent = t.title;
   document.getElementById("text-subtitle").textContent = t.subtitle;
   document.getElementById("text-cv").textContent = t.cv;
   document.getElementById("text-cover").textContent = t.cover;
-  document.getElementById("text-pdf").textContent = t.pdf;
+  // document.getElementById("text-pdf").textContent = t.pdf; // בטל הערה אם החזרת את כפתור ה-PDF
+
+  // ⬇️ הנה השדרוג הקריטי: מעדכן את הקישורים להוסיף את השפה לכתובת ⬇️
+  document.getElementById("text-cv").href = `cv.html?lang=${lang}`;
+  document.getElementById("text-cover").href = `coverletter.html?lang=${lang}`;
 
   // Toggle document direction
   document.documentElement.dir = t.dir;
+  document.body.className = `index-page lang-${lang}`; // מוסיף קלאס לגוף הדף לעיצובים ספציפיים
 
   // Manage active state of language buttons
   document
