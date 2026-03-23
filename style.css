@@ -250,12 +250,16 @@ body {
 /* כותרות סקשן - נשארות במרכז ליצירת סדר ויזואלי */
 .resume-section h3 {
   text-align: center;
-  color: var(--wix-blue);
-  border-bottom: 1px solid rgba(0, 38, 255, 0.3);
+  color: #ffffff; /* לבן בוהק */
+  font-weight: 700;
+
+  /* הילה סופר עדינה - רק כדי להפריד מהרקע בלי "ללכלך" את האותיות */
+  text-shadow: 0 0 2px rgba(255, 255, 255, 0.4);
+  border-bottom: 5px solid rgba(0, 38, 255, 0.3);
   display: block;
   padding-bottom: 10px;
   margin-bottom: 25px;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
 }
 
 /* כותרות תפקיד - יישור לקצוות (שם תפקיד בימין, תאריך בשמאל) */
@@ -433,9 +437,11 @@ li::before {
   transform: translateX(-5px); /* מזיז את החץ שמאלה ב-Hover */
 }
 
-/* עיצוב הכותרת הכחולה הממורכזת */
 .section-title {
-  color: #0022ff; /* או הכחול הספציפי שבו השתמשת לניסיון תעסוקתי */
+  color: #ffffff; /* לבן בוהק */
+
+  /* הילה סופר עדינה - רק כדי להפריד מהרקע בלי "ללכלך" את האותיות */
+  text-shadow: 0 0 2px rgba(255, 255, 255, 0.4);
   text-align: center;
   font-size: 1.5rem;
   margin-bottom: 20px;
@@ -453,31 +459,61 @@ li::before {
 }
 
 .resume-header {
-  text-align: center; /* ממרכז את כל התוכן בראש הדף */
+  text-align: center;
   margin-bottom: 40px;
   padding: 20px 0;
 }
 
 .resume-header h1 {
   font-size: 2.2rem;
-  color: #ffffff; /* לבן כפי שמופיע בתמונה */
+  color: #ffffff;
   margin-bottom: 5px;
-  font-weight: bold;
+  font-weight: 800;
+  /* הוספת זוהר עדין מאוד גם לשם */
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
 }
 
 .tagline {
-  font-size: 1.2rem;
-  color: #0022ff; /* הכחול שבו השתמשת לכותרות הראשיות */
+  font-size: 1.4rem;
+  color: #ffffff;
+  font-weight: 700;
+  text-shadow: 0 0 3px rgba(255, 255, 255, 0.4);
+  letter-spacing: 0.5px;
   margin-bottom: 15px;
-  font-weight: normal;
 }
 
 .contact-info {
   font-size: 0.95rem;
-  color: #e0e0e0; /* אפור בהיר שתואם לטקסט הפירוט */
+  color: #ffffff; /* לבן לכל הפרטים הכלליים */
   display: flex;
-  justify-content: center; /* ממרכז את פרטי הקשר בשורה אחת */
-  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+/* עיצוב הקישורים (GitHub, LinkedIn) בתוך ה-Header */
+.contact-info a {
+  color: #00d4ff; /* תכלת ניאון קריא ובולט */
+  text-decoration: none;
+  font-weight: 600;
+  border-bottom: 1px solid rgba(0, 212, 255, 0.2);
+  transition: all 0.3s ease;
+  text-shadow: 0 0 5px rgba(0, 212, 255, 0.3);
+}
+
+/* אפקט Hover לקישורים */
+.contact-info a:hover {
+  color: #ffffff;
+  border-bottom: 1px solid #ffffff;
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.6);
+  transform: translateY(-1px);
+}
+
+/* עיצוב המפרידים (|) */
+.contact-info .sep {
+  color: #444; /* אפור כהה כדי שלא יגנבו את הפוקוס */
+  font-weight: normal;
 }
 
 .sep {
@@ -804,4 +840,39 @@ body.en-version {
 .en-mode .nav-links {
   margin-right: auto;
   margin-left: 0;
+}
+
+/* --- עיצוב הדגשות וקישורים: גרסה נקייה ומקצועית --- */
+
+/* פונה לכל הטקסט המודגש (strong) במכתב ובקורות החיים */
+.cover-letter-text strong,
+.cv-content strong,
+.subpage strong {
+  color: #ffffff; /* לבן בוהק */
+  font-weight: 700;
+
+  /* הילה סופר עדינה - רק כדי להפריד מהרקע בלי "ללכלך" את האותיות */
+  text-shadow: 0 0 2px rgba(255, 255, 255, 0.4);
+
+  letter-spacing: 0.2px;
+}
+
+/* עיצוב קישורים (a) - נקי וללא קו תחתון ברירת מחדל */
+.cover-letter-text a,
+.cv-content a,
+.subpage a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 700;
+  /* קו תחתון דק וכמעט שקוף שמתחזק ב-Hover */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.2s ease-in-out;
+}
+
+/* אפקט Hover לקישורים בלבד - אינטראקטיביות עדינה */
+.cover-letter-text a:hover,
+.cv-content a:hover {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.8);
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+  opacity: 0.9;
 }

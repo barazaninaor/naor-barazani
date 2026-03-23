@@ -3,8 +3,8 @@ const translations = {
   en: {
     title: "Naor Barazani",
     subtitle:
-      "Full-Stack Developer Student @ Technion | Logic & Automation Specialist", // עדכון קטן לניסוח שדיברנו עליו
-    cv: "View CV",
+      "Full-Stack Developer Student @ Technion Continuing Education | Logic & Automation Specialist", // עדכון קטן לניסוח שדיברנו עליו
+    cv: "Resume",
     cover: "Cover Letter",
     pdf: "Download PDF",
     dir: "ltr",
@@ -12,7 +12,7 @@ const translations = {
   he: {
     title: "נאור ברזני",
     subtitle:
-      "מפתח Full-Stack (סטודנט בטכניון) | מתמחה באוטומציה ופתרון בעיות לוגיות",
+      "מפתח Full-Stack (סטודנט בטכניון - לימודי המשך) | מתמחה באוטומציה ופתרון בעיות לוגיות",
     cv: "קורות חיים",
     cover: "מכתב מקדים",
     pdf: "הורד PDF",
