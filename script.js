@@ -44,3 +44,18 @@ function setLanguage(lang) {
     .forEach((btn) => btn.classList.remove("active"));
   document.getElementById(`btn-${lang}`).classList.add("active");
 }
+
+// קוד שירוץ אוטומטית כשהדף נטען
+document.addEventListener("DOMContentLoaded", () => {
+  // בדיקה אם יש פרמטר lang בכתובת ה-URL
+  const urlParams = new URLSearchParams(window.location.search);
+  const langFromUrl = urlParams.get("lang");
+
+  // אם נמצאה שפה בכתובת והיא קיימת במילון שלנו, נפעיל אותה
+  if (langFromUrl && translations[langFromUrl]) {
+    setLanguage(langFromUrl);
+  } else {
+    // אם אין פרמטר, נשאר על עברית כברירת מחדל
+    setLanguage("he");
+  }
+});

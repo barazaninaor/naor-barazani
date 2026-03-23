@@ -153,43 +153,47 @@
         const contentEn = document.getElementById("content-en");
         const btnHe = document.getElementById("btn-he");
         const btnEn = document.getElementById("btn-en");
-
-        // שליפת אלמנטים של התפריט
         const navHome = document.getElementById("nav-home");
         const navCv = document.getElementById("nav-cv");
 
+        // עדכון כיוון דף וקלאסים
+        document.documentElement.dir = lang === "en" ? "ltr" : "rtl";
+        document.body.className = lang === "en" ? "subpage en-mode" : "subpage";
+
+        // הצגת תוכן
         if (lang === "en") {
-          contentHe.style.display = "none";
-          contentEn.style.display = "block";
+          if (contentHe)
+            contentHe.style.setProperty("display", "none", "important");
+          if (contentEn)
+            contentEn.style.setProperty("display", "block", "important");
           btnEn.classList.add("active");
           btnHe.classList.remove("active");
-          document.body.classList.add("en-mode");
-
-          // עדכון טקסט וקישורים לאנגלית
-          navHome.textContent = navTranslations.en.home;
-          navCv.textContent = navTranslations.en.cv;
-          navHome.href = "index.html?lang=en";
-          navCv.href = "cv.html?lang=en";
         } else {
-          contentHe.style.display = "block";
-          contentEn.style.display = "none";
+          if (contentHe)
+            contentHe.style.setProperty("display", "block", "important");
+          if (contentEn)
+            contentEn.style.setProperty("display", "none", "important");
           btnHe.classList.add("active");
           btnEn.classList.remove("active");
-          document.body.classList.remove("en-mode");
+        }
 
-          // עדכון טקסט וקישורים לעברית
-          navHome.textContent = navTranslations.he.home;
-          navCv.textContent = navTranslations.he.cv;
-          navHome.href = "index.html?lang=he";
-          navCv.href = "cv.html?lang=he";
+        // עדכון טקסט וקישורים בתפריט - כאן התיקון הקריטי
+        if (navHome) {
+          navHome.textContent = navTranslations[lang].home;
+          navHome.setAttribute("href", `index.html?lang=${lang}`);
+        }
+        if (navCv) {
+          navCv.textContent = navTranslations[lang].cv;
+          navCv.setAttribute("href", `cv.html?lang=${lang}`);
         }
       }
 
-      window.onload = function () {
+      // הפעלה בטעינה
+      document.addEventListener("DOMContentLoaded", () => {
         const urlParams = new URLSearchParams(window.location.search);
         const lang = urlParams.get("lang") || "he";
         switchLang(lang);
-      };
+      });
     </script>
   </body>
 </html>
