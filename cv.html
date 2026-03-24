@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title id="page-title">נאור ברזני | CV</title>
+    <title id="page-title">Naor Barazani | CV</title>
     <link
       href="https://fonts.googleapis.com/css2?family=Wix+Madefor+Display:wght@400;600;800&display=swap"
       rel="stylesheet"
@@ -79,7 +79,7 @@
     <script>
       const translations = {
         he: {
-          pageTitle: "נאור ברזני | CV",
+          pageTitle: "Naor Barazani | CV",
           name: "נאור ברזני",
           tagline: "AI Full Stack Developer",
           location: "תל אביב - יפו",
@@ -312,6 +312,8 @@
         document.getElementById("title-profile").textContent = t.profileTitle;
         document.getElementById("text-profile-desc").textContent =
           t.profileDesc;
+        const profileDescElement = document.getElementById("text-profile-desc");
+        profileDescElement.style.textAlign = lang === "en" ? "left" : "justify";
         document.getElementById("title-experience").textContent = t.expTitle;
         document.getElementById("title-education").textContent = t.eduTitle;
         document.getElementById("title-military").textContent = t.milTitle;
