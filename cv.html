@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Naor Barazani | CV</title>
+    <title id="page-title">נאור ברזני | CV</title>
     <link
       href="https://fonts.googleapis.com/css2?family=Wix+Madefor+Display:wght@400;600;800&display=swap"
       rel="stylesheet"
@@ -13,299 +13,338 @@
   <body class="resume-page">
     <header class="main-nav">
       <div class="lang-switch">
-        <button class="lang-btn active">עברית</button>
-        <a href="cv-en.html" class="lang-btn">English</a>
+        <button class="lang-btn active" id="btn-he" onclick="setLanguage('he')">
+          עברית
+        </button>
+        <button class="lang-btn" id="btn-en" onclick="setLanguage('en')">
+          English
+        </button>
       </div>
-
       <nav class="nav-links">
-        <a href="index.html" class="nav-item">דף הבית</a>
-        <a href="coverletter.html" class="nav-item">מכתב מקדים</a>
+        <a href="index.html" class="nav-item" id="nav-home">דף הבית</a>
+        <a href="coverletter.html" class="nav-item" id="nav-cover"
+          >מכתב מקדים</a
+        >
       </nav>
       <div class="nav-spacer"></div>
-
-      <!-- <div class="resume-actions">
-        <a href="קורות חיים - נאור ברזני.pdf" download class="download-btn">
-          <span>⬇</span> הורדת קורות חיים
-        </a>
-      </div> -->
     </header>
 
     <div class="resume-container">
-        <header class="resume-header">
-          <h1>נאור ברזני</h1>
-          <p class="tagline">AI Full Stack Developer</p>
-          <div class="contact-info">
-            <span>054-7864822</span>
-            <span class="sep">|</span>
-            <span>barazaninaor@gmail.com</span>
-            <span class="sep">|</span>
-            <strong><span>תל אביב - יפו</span></strong>
-            <span class="sep">|</span>
-            <a href="https://www.linkedin.com/in/naor-barazani/" target="_blank"
-              >LinkedIn</a
-            >
-            <span class="sep">|</span>
-            <a href="https://github.com/barazaninaor" target="_blank">GitHub</a>
-          </div>
-        </header>
+      <header class="resume-header">
+        <h1 id="text-name">נאור ברזני</h1>
+        <p class="tagline" id="text-tagline">AI Full Stack Developer</p>
+        <div class="contact-info">
+          <span>054-7864822</span>
+          <span class="sep">|</span>
+          <span>barazaninaor@gmail.com</span>
+          <span class="sep">|</span>
+          <strong id="text-location">תל אביב - יפו</strong>
+          <span class="sep">|</span>
+          <a href="https://www.linkedin.com/in/naor-barazani/" target="_blank"
+            >LinkedIn</a
+          >
+          <span class="sep">|</span>
+          <a href="https://github.com/barazaninaor" target="_blank">GitHub</a>
+        </div>
       </header>
 
       <section class="resume-section">
-        <h2 class="section-title">פרופיל אישי וטכנולוגי</h2>
-
-        <p class="profile-text">
-          בעל תשוקה להרחבת הידע בעולמות הפיתוח, מגיע מרקע של אנליזה פיננסית
-          ומתמחה בפיצוח בעיות מורכבות והפיכתן לפתרונות אוטומטיים. בעל ניסיון
-          מוכח בייעול תהליכי עבודה בארגון ב-50% על ידי פיתוח מערך לקליטת נתונים
-          אוטומטית ועיבוד דאטה רוחבי, בניית כלי אוטומציה ופיתוח אפליקציות Web
-          לחישובים נפוצים. בעל יכולת למידה עצמית גבוהה, עניין עמוק בארכיטקטורת
-          מערכות ומיינדסט של AI-Native.
-        </p>
+        <h2 class="section-title" id="title-profile">פרופיל אישי וטכנולוגי</h2>
+        <p class="profile-text" id="text-profile-desc"></p>
       </section>
 
       <section class="resume-section">
-        <h3>ניסיון תעסוקתי</h3>
-
-        <div class="experience-item">
-          <div class="item-header">
-            <strong>אנליסט, גורן פמילי אופיס, תל אביב - יפו</strong>
-            <span>2025 - היום</span>
-          </div>
-          <ul>
-            <li>
-              <strong>אפיון ופיתוח אפליקציית Web:</strong> בניית כלי ייעודי
-              (HTML/CSS/JS) המשמש את צוות האנליסטים לביצוע חישובים פיננסיים
-              נפוצים בצורה מהירה, מה שייעל משמעותית את תהליכי העבודה.
-              <br />
-              <a
-                href="https://barazaninaor.github.io/Calculators/"
-                target="_blank"
-                class="project-link"
-                >צפייה במחשבונים</a
-              >
-            </li>
-            <li>
-              <strong>אוטומציה ועיבוד נתונים:</strong> תכנון והטמעת מערך לקליטת
-              נתונים אוטומטית ועיבוד דאטה רוחבי עבור עשרות לקוחות, מה שהוביל
-              לקיצור זמן העבודה החודשי ב-50% ושיפור דיוק הדוחות.
-            </li>
-            <li>
-              <strong>ניתוח מערכות פיננסיות:</strong> ביצוע השוואות כמותיות
-              מורכבות בין מנהלי תיקים וקרנות גידור תוך שימוש במבני נתונים
-              מתקדמים לצורך קבלת החלטות השקעה וגיוס לקוחות.
-            </li>
-          </ul>
-        </div>
-
-        <div class="experience-item">
-          <div class="item-header">
-            <strong>אחראי תפעול השקעות, פמילי אופיס WM, הרצליה</strong>
-            <span>2024 - 2025</span>
-          </div>
-          <ul>
-            <li>
-              <strong>אוטומציה ופיתוח (VBA):</strong> תכנון והטמעת כלי אוטומציה
-              מורכבים לשיפור תהליכי עבודה ודיוק נתונים, תוך שימוש בכתיבת קוד VBA
-              לייעול הפקת דוחות פיננסיים.
-            </li>
-            <li>
-              <strong>ניתוח מערכות ונתונים:</strong> ניהול והפקת ניתוחים
-              פיננסיים מתקדמים באמצעות מערכת "דנאל" ושילובם בתהליכי קבלת החלטות
-              מבוססי דאטה.
-            </li>
-            <li>
-              <strong>ארכיטקטורת תיקי השקעות:</strong> ניתוח חברות והרכבת מודלים
-              לתיקי מניות מותאמים אישית, תוך התמקדות באופטימיזציה של נכסים.
-            </li>
-          </ul>
-        </div>
-
-        <div class="experience-item">
-          <div class="item-header">
-            <strong>מייסד ומרצה, קורס דיגיטלי להשקעות</strong>
-            <span>2023 - היום</span>
-          </div>
-          <ul>
-            <li>
-              <strong>יזמות וניהול מוצר:</strong> הקמה וניהול של קורס השקעות
-              ב-Udemy עם למעלה מ-1,000 סטודנטים, תוך הדרכה ליצירת הכנסה פסיבית
-              ובניית אסטרטגיות השקעה ארוכות טווח.
-              <br />
-              <a
-                href="https://www.udemy.com/course/passive_income/?referralCode=DCB61C494E0730210CDB"
-                target="_blank"
-                class="project-link"
-                >צפייה בקורס ב-Udemy</a
-              >
-            </li>
-            <li>
-              <strong>פיתוח ותשתית Web:</strong> הקמה ותחזוקת אתר הבית של הקורס,
-              כולל מעבר מתשתית WordPress לאתר סטטי המנוהל ב-GitHub Pages ומופץ
-              דרך Cloudflare לשיפור ביצועים ואבטחה.
-              <br />
-              <a
-                href="https://dividendream.com"
-                target="_blank"
-                class="project-link"
-                >לאתר Dividendream</a
-              >
-            </li>
-            <li>
-              <strong>ניתוח נתונים שוטף:</strong> ניהול תיק השקעות פעיל והצגת
-              עדכונים חודשיים מבוססי דאטה להמחשת עקרונות הקורס וביצועי השוק.
-            </li>
-          </ul>
-        </div>
+        <h2 class="section-title" id="title-experience">ניסיון תעסוקתי</h2>
+        <div id="experience-list"></div>
       </section>
 
       <section class="resume-section">
-        <h3>השכלה</h3>
-
-      <div class="experience-item">
-        <div class="item-header">
-          <strong>פיתוח Full-Stack, הטכניון - לימודי המשך</strong>
-          <span>2025 - היום</span>
-        </div>
-        <ul>
-          <li>
-            <strong>הכשרה טכנולוגית (320 שעות):</strong> פיתוח צד לקוח וצד שרת,
-            עבודה עם בסיסי נתונים וארכיטקטורת מערכות.
-          </li>
-          <li>
-            <strong>פרויקט גמר שלב א':</strong> פיתוח אפליקציית
-            "Math Ninja" – משחק אינטראקטיבי לתרגול לוח הכפל המבוסס על לוגיקת
-            צד-לקוח, ניהול מצבי משחק ושימוש בטכנולוגיות Web בסיסיות.
-            <br />
-            <a
-              href="https://math-ninja-production.up.railway.app/"
-              target="_blank"
-              class="project-link"
-              >לצפייה בפרויקט Math Ninja</a
-            >
-          </li>
-          <li>
-            <strong>כלים וטכנולוגיות:</strong> ידע מעשי ב-JavaScript, Node.js, SQL וניהול גרסאות ב-Git.
-          </li>
-          <li>
-            <strong>בתהליך למידה והכשרה (2026):</strong> פיתוח ב-React, Angular,
-            Python, Java ושילוב יכולות AI בפיתוח.
-          </li>
-        </ul>
-      </div>
-
-      <div class="experience-item">
-        <div class="item-header">
-          <strong>תואר שני בפילוסופיה, אוניברסיטת תל אביב</strong>
-          <span>2020 - 2025</span>
-        </div>
-        <ul>
-          <li>
-            <strong>מחקר וניתוח לוגי:</strong> התמחות בניתוח מבנים מופשטים
-            ומערכות לוגיות מורכבות, מיומנות המקבילה לתכנון ארכיטקטורת תוכנה
-            ופתרון בעיות אלגוריתמיות.
-          </li>
-          <li>
-            <strong>כתיבה וניסוח מתודולוגי:</strong> כתיבת עבודות מחקר הדורשות
-            דיוק מירבי, סדר והצגת תהליכים בצורה קוהרנטית, יכולות הקריטיות לכתיבת
-            קוד נקי ותיעוד טכני.
-          </li>
-          <li>
-            <strong>הרצאה בכנס של החוג לפילוסופיה:</strong> "מוות כמניע לחיים" –
-            כיצד להשתמש במודעות למוות כמנגנון מניע למימוש עצמי במקום כגורם
-            לחרדה.
-            <br />
-            <a
-              href="https://youtu.be/gbMWRa0guhg?si=6J5pBnofvtympxI2"
-              target="_blank"
-              class="project-link"
-              >צפייה בהרצאה ב-YouTube</a
-            >
-          </li>
-        </ul>
-      </div>
-
-      <div class="experience-item">
-        <div class="item-header">
-          <strong>ניהול תיקי השקעות, BDO</strong>
-          <span>2020 - 2022</span>
-        </div>
-        <ul>
-          <li>
-            <strong>ניתוח כמותי ומודלים פיננסיים:</strong> בניית מודלים להערכת
-            סיכונים וביצועי שוק, תוך שימוש במערכות מידע מתקדמות לעיבוד נתונים
-            בזמן אמת.
-          </li>
-          <li>
-            <strong>קבלת החלטות מבוססת דאטה:</strong> פיתוח אסטרטגיות השקעה על
-            בסיס ניתוח פונדמנטלי וטכני, תוך יישום חשיבה ביקורתית לניהול נכסים
-            בתנאי אי-וודאות.
-          </li>
-        </ul>
-      </div>
-
-      <div class="experience-item">
-        <div class="item-header">
-          <strong>תואר ראשון בפילוסופיה, האוניברסיטה העברית</strong>
-          <span>2015 - 2018</span>
-        </div>
-        <ul>
-          <li>
-            <strong>יסודות הלוגיקה והפילוסופיה של המדע:</strong> לימוד מעמיק של
-            לוגיקה פורמלית, המהווה את הבסיס המתמטי והלוגי לשפות תכנות ומבני
-            נתונים.
-          </li>
-          <li>
-            <strong>חשיבה אנליטית:</strong> פיתוח יכולת פירוק של בעיות רחבות
-            לתתי-בעיות פשוטות, מיומנות ליבה בתהליכי Debugging ופיתוח מערכות.
-          </li>
-        </ul>
-      </div>
+        <h2 class="section-title" id="title-education">השכלה</h2>
+        <div id="education-list"></div>
       </section>
 
       <section class="resume-section">
-        <h3>שירות צבאי</h3>
-
-      <div class="experience-item">
-        <div class="item-header">
-          <strong>שירות צבאי: מדריך התגוננות, חיל האוויר</strong>
-          <span>2012 - 2014</span>
-        </div>
-        <ul>
-          <li>
-            <strong>הדרכה והובלה:</strong> העברת הכשרות מקצועיות למצבי חירום,
-            פיתוח מיומנויות עמידה מול קהל והעברת מסרים בצורה ממוקדת.
-          </li>
-        </ul>
-      </div>
+        <h2 class="section-title" id="title-military">שירות צבאי</h2>
+        <div id="military-list"></div>
       </section>
 
       <section class="resume-section">
-        <h3>ארגז כלים ומיומנויות</h3>
-
-          <ul>
-          <li>
-            <strong>פיתוח ותוכנה:</strong> ידע מעשי ב-HTML, CSS, JavaScript,
-             Node.js ו-SQL.
-          </li>
-          <li>
-            <strong>אוטומציה ודאטה:</strong> פיתוח כלי אוטומציה ב-VBA, ניתוח
-            נתונים כמותי ובניית מודלים פיננסיים מורכבים.
-          </li>
-          <li>
-            <strong>כלים ותשתיות:</strong> ניהול גרסאות ב-Git, עבודה עם GitHub
-            Pages וניהול תשתיות דרך Cloudflare.
-          </li>
-          <li>
-            <strong>למידה טכנולוגית (בתהליך למידה):</strong> הכשרה פעילה
-            ב-TypeScript, React, Angular, Python ו-Java.
-          </li>
-          <li>
-            <strong>יכולות אישיות:</strong> יכולת למידה עצמית
-            גבוהה, ניהול פרויקטים מקצה לקצה וחשיבה לוגית-אנליטית
-            מעמיקה.
-          </li>
-        </ul>
-      </div>
+        <h2 class="section-title" id="title-skills">ארגז כלים ומיומנויות</h2>
+        <div id="skills-list-container">
+          <ul id="skills-list"></ul>
+        </div>
+      </section>
     </div>
+
+    <script>
+      const translations = {
+        he: {
+          pageTitle: "נאור ברזני | CV",
+          name: "נאור ברזני",
+          tagline: "AI Full Stack Developer",
+          location: "תל אביב - יפו",
+          navHome: "דף הבית",
+          navCover: "מכתב מקדים",
+          profileTitle: "פרופיל אישי וטכנולוגי",
+          profileDesc:
+            "בעל תשוקה להרחבת הידע בעולמות הפיתוח, מגיע מרקע של אנליזה פיננסית ומתמחה בפיצוח בעיות מורכבות והפיכתן לפתרונות אוטומטיים. בעל ניסיון מוכח בייעול תהליכי עבודה בארגון ב-50% על ידי פיתוח מערך לקליטת נתונים אוטומטית ועיבוד דאטה רוחבי, בניית כלי אוטומציה ופיתוח אפליקציות Web לחישובים נפוצים. בעל יכולת למידה עצמית גבוהה, עניין עמוק בארכיטקטורת מערכות ומיינדסט של AI-Native.",
+          expTitle: "ניסיון תעסוקתי",
+          eduTitle: "השכלה",
+          milTitle: "שירות צבאי",
+          skillsTitle: "ארגז כלים ומיומנויות",
+          dir: "rtl",
+        },
+        en: {
+          pageTitle: "Naor Barazani | CV",
+          name: "Naor Barazani",
+          tagline: "AI Full Stack Developer",
+          location: "Tel Aviv - Yafo",
+          navHome: "Home",
+          navCover: "Cover Letter",
+          profileTitle: "Personal and Technological Profile",
+          profileDesc:
+            "Passionate about expanding knowledge in the development world, coming from a financial analysis background and specializing in solving complex problems and turning them into automated solutions. Proven experience in streamlining organizational workflows by 50% through developing automated data ingestion systems and cross-functional data processing, building automation tools, and developing Web applications for common calculations. Possesses high self-learning ability, a deep interest in system architecture, and an AI-Native mindset.",
+          expTitle: "Professional Experience",
+          eduTitle: "Education",
+          milTitle: "Military Service",
+          skillsTitle: "Toolkit and Skills",
+          dir: "ltr",
+        },
+      };
+
+      const experienceData = {
+        he: [
+          {
+            title: "אנליסט, גורן פמילי אופיס, תל אביב - יפו",
+            date: "2025 - היום",
+            bullets: [
+              "<strong>אפיון ופיתוח אפליקציית Web:</strong> בניית כלי ייעודי (HTML/CSS/JS) המשמש את צוות האנליסטים לביצוע חישובים פיננסיים נפוצים בצורה מהירה, מה שייעל משמעותית את תהליכי העבודה. <br><a href='https://barazaninaor.github.io/Calculators/' target='_blank' class='project-link'>צפייה במחשבונים</a>",
+              "<strong>אוטומציה ועיבוד נתונים:</strong> תכנון והטמעת מערך לקליטת נתונים אוטומטית ועיבוד דאטה רוחבי עבור עשרות לקוחות, מה שהוביל לקיצור זמן העבודה החודשי ב-50% ושיפור דיוק הדוחות.",
+              "<strong>ניתוח מערכות פיננסיות:</strong> ביצוע השוואות כמותיות מורכבות בין מנהלי תיקים וקרנות גידור תוך שימוש במבני נתונים מתקדמים לצורך קבלת החלטות השקעה וגיוס לקוחות.",
+            ],
+          },
+          {
+            title: "אחראי תפעול השקעות, פמילי אופיס WM, הרצליה",
+            date: "2024 - 2025",
+            bullets: [
+              "<strong>אוטומציה ופיתוח (VBA):</strong> תכנון והטמעת כלי אוטומציה מורכבים לשיפור תהליכי עבודה ודיוק נתונים, תוך שימוש בכתיבת קוד VBA לייעול הפקת דוחות פיננסיים.",
+              "<strong>ניתוח מערכות ונתונים:</strong> ניהול והפקת ניתוחים פיננסיים מתקדמים באמצעות מערכת 'דנאל' ושילובם בתהליכי קבלת החלטות מבוססי דאטה.",
+              "<strong>ארכיטקטורת תיקי השקעות:</strong> ניתוח חברות והרכבת מודלים לתיקי מניות מותאמים אישית, תוך התמקדות באופטימיזציה של נכסים.",
+            ],
+          },
+          {
+            title: "מייסד ומרצה, קורס דיגיטלי להשקעות",
+            date: "2023 - היום",
+            bullets: [
+              "<strong>יזמות וניהול מוצר:</strong> הקמה וניהול של קורס השקעות ב-Udemy עם למעלה מ-1,000 סטודנטים, תוך הדרכה ליצירת הכנסה פסיבית ובניית אסטרטגיות השקעה ארוכות טווח. <br><a href='https://www.udemy.com/course/passive_income/?referralCode=DCB61C494E0730210CDB' target='_blank' class='project-link'>צפייה בקורס ב-Udemy</a>",
+              "<strong>פיתוח ותשתית Web:</strong> הקמה ותחזוקת אתר הבית של הקורס, כולל מעבר מתשתית WordPress לאתר סטטי המנוהל ב-GitHub Pages ומופץ דרך Cloudflare לשיפור ביצועים ואבטחה. <br><a href='https://dividendream.com' target='_blank' class='project-link'>לאתר Dividendream</a>",
+              "<strong>ניתוח נתונים שוטף:</strong> ניהול תיק השקעות פעיל והצגת עדכונים חודשיים מבוססי דאטה להמחשת עקרונות הקורס וביצועי השוק.",
+            ],
+          },
+        ],
+        en: [
+          {
+            title: "Analyst, Goren Family Office, Tel Aviv - Yafo",
+            date: "2025 - Present",
+            bullets: [
+              "<strong>Web App Characterization & Development:</strong> Built a dedicated tool (HTML/CSS/JS) used by the analyst team to perform common financial calculations quickly, significantly streamlining workflows. <br><a href='https://barazaninaor.github.io/Calculators/' target='_blank' class='project-link'>View Calculators</a>",
+              "<strong>Automation & Data Processing:</strong> Planned and implemented an automated data ingestion and cross-sectional data processing system for dozens of clients, leading to a 50% reduction in monthly workload and improved report accuracy.",
+              "<strong>Financial Systems Analysis:</strong> Performed complex quantitative comparisons between portfolio managers and hedge funds using advanced data structures for investment decision-making and client acquisition.",
+            ],
+          },
+          {
+            title: "Investment Operations Lead, WM Family Office, Herzliya",
+            date: "2024 - 2025",
+            bullets: [
+              "<strong>Automation & Development (VBA):</strong> Designed and implemented complex automation tools to improve workflows and data accuracy, using VBA coding to streamline financial report generation.",
+              "<strong>Systems & Data Analysis:</strong> Managed and produced advanced financial analyses using the 'Danel' system, integrating them into data-driven decision-making processes.",
+              "<strong>Portfolio Architecture:</strong> Analyzed companies and assembled models for customized stock portfolios, focusing on asset optimization.",
+            ],
+          },
+          {
+            title: "Founder & Lecturer, Digital Investment Course",
+            date: "2023 - Present",
+            bullets: [
+              "<strong>Entrepreneurship & Product Management:</strong> Established and managed an investment course on Udemy with over 1,000 students, providing guidance on generating passive income and building long-term investment strategies. <br><a href='https://www.udemy.com/course/passive_income/' target='_blank' class='project-link'>View Course on Udemy</a>",
+              "<strong>Web Development & Infrastructure:</strong> Established and maintained the course's homepage, including a migration from WordPress to a static site managed on GitHub Pages and distributed via Cloudflare for improved performance and security. <br><a href='https://dividendream.com' target='_blank' class='project-link'>Visit Dividendream</a>",
+              "<strong>Ongoing Data Analysis:</strong> Managed an active investment portfolio and presented monthly data-driven updates to illustrate course principles and market performance.",
+            ],
+          },
+        ],
+      };
+
+      const educationData = {
+        he: [
+          {
+            title: "פיתוח Full-Stack, הטכניון - לימודי המשך",
+            date: "2025 - היום",
+            bullets: [
+              "<strong>הכשרה טכנולוגית (320 שעות):</strong> פיתוח צד לקוח וצד שרת, עבודה עם בסיסי נתונים וארכיטקטורת מערכות.",
+              "<strong>פרויקט גמר שלב א':</strong> פיתוח אפליקציית 'Math Ninja' – משחק אינטראקטיבי לתרגול לוח הכפל המבוסס על לוגיקת צד-לקוח. <br><a href='https://math-ninja-production.up.railway.app/' target='_blank' class='project-link'>לצפייה בפרויקט Math Ninja</a>",
+              "<strong>כלים וטכנולוגיות:</strong> ידע מעשי ב-JavaScript, Node.js, SQL וניהול גרסאות ב-Git.",
+              "<strong>בתהליך למידה והכשרה (2026):</strong> פיתוח ב-React, Angular, Python, Java ושילוב יכולות AI בפיתוח.",
+            ],
+          },
+          {
+            title: "תואר שני בפילוסופיה, אוניברסיטת תל אביב",
+            date: "2020 - 2025",
+            bullets: [
+              "<strong>מחקר וניתוח לוגי:</strong> התמחות בניתוח מבנים מופשטים ומערכות לוגיות מורכבות, מיומנות המקבילה לתכנון ארכיטקטורת תוכנה ופתרון בעיות אלגוריתמיות.",
+              "<strong>כתיבה וניסוח מתודולוגי:</strong> כתיבת עבודות מחקר הדורשות דיוק מירבי, סדר והצגת תהליכים בצורה קוהרנטית.",
+              "<strong>הרצאה בכנס:</strong> 'מוות כמניע לחיים' – כיצד להשתמש במודעות למוות כמנגנון מניע למימוש עצמי. <br><a href='https://youtu.be/gbMWRa0guhg' target='_blank' class='project-link'>צפייה בהרצאה ב-YouTube</a>",
+            ],
+          },
+          {
+            title: "ניהול תיקי השקעות, BDO",
+            date: "2020 - 2022",
+            bullets: [
+              "<strong>ניתוח כמותי ומודלים פיננסיים:</strong> בניית מודלים להערכת סיכונים וביצועי שוק, תוך שימוש במערכות מידע מתקדמות לעיבוד נתונים בזמן אמת.",
+              "<strong>קבלת החלטות מבוססת דאטה:</strong> פיתוח אסטרטגיות השקעה על בסיס ניתוח פונדמנטלי וטכני.",
+            ],
+          },
+          {
+            title: "תואר ראשון בפילוסופיה, האוניברסיטה העברית",
+            date: "2015 - 2018",
+            bullets: [
+              "<strong>יסודות הלוגיקה והפילוסופיה של המדע:</strong> לימוד מעמיק של לוגיקה פורמלית, המהווה את הבסיס המתמטי והלוגי לשפות תכנות.",
+              "<strong>חשיבה אנליטית:</strong> פיתוח יכולת פירוק של בעיות רחבות לתתי-בעיות פשוטות, מיומנות ליבה ב-Debugging.",
+            ],
+          },
+        ],
+        en: [
+          {
+            title: "Full-Stack Development, Technion - Continuing Education",
+            date: "2025 - Present",
+            bullets: [
+              "<strong>Technological Training (320 hours):</strong> Client-side and server-side development, working with databases and system architecture.",
+              "<strong>Final Project Phase A:</strong> Developed 'Math Ninja' – an interactive game for practicing multiplication tables based on client-side logic. <br><a href='https://math-ninja-production.up.railway.app/' target='_blank' class='project-link'>View Math Ninja Project</a>",
+              "<strong>Tools & Technologies:</strong> Practical knowledge in JavaScript, Node.js, SQL, and version control with Git.",
+              "<strong>In Training (2026):</strong> Development in React, Angular, Python, Java, and integrating AI capabilities in development.",
+            ],
+          },
+          {
+            title: "M.A. in Philosophy, Tel Aviv University",
+            date: "2020 - 2025",
+            bullets: [
+              "<strong>Research & Logical Analysis:</strong> Specialization in analyzing abstract structures and complex logical systems, a skill equivalent to software architecture design and algorithmic problem-solving.",
+              "<strong>Methodological Writing:</strong> Writing research papers requiring maximum precision, order, and coherent process presentation.",
+              "<strong>Conference Lecture:</strong> 'Death as a Motivator for Life' – how to use awareness of mortality as a driving mechanism for self-realization. <br><a href='https://youtu.be/gbMWRa0guhg' target='_blank' class='project-link'>Watch Lecture on YouTube</a>",
+            ],
+          },
+          {
+            title: "Investment Portfolio Management, BDO",
+            date: "2020 - 2022",
+            bullets: [
+              "<strong>Quantitative Analysis & Financial Models:</strong> Building models for risk assessment and market performance, using advanced information systems for real-time data processing.",
+              "<strong>Data-Driven Decision Making:</strong> Developing investment strategies based on fundamental and technical analysis.",
+            ],
+          },
+          {
+            title: "B.A. in Philosophy, Hebrew University of Jerusalem",
+            date: "2015 - 2018",
+            bullets: [
+              "<strong>Foundations of Logic and Philosophy of Science:</strong> In-depth study of formal logic, which forms the mathematical and logical basis for programming languages.",
+              "<strong>Analytical Thinking:</strong> Developing the ability to break down broad problems into simple sub-problems, a core skill in debugging and system development.",
+            ],
+          },
+        ],
+      };
+
+      const militaryData = {
+        he: [
+          {
+            title: "מדריך התגוננות, חיל האוויר",
+            date: "2012 - 2014",
+            bullets: [
+              "<strong>הדרכה והובלה:</strong> העברת הכשרות מקצועיות למצבי חירום, פיתוח מיומנויות עמידה מול קהל והעברת מסרים בצורה ממוקדת.",
+            ],
+          },
+        ],
+        en: [
+          {
+            title: "Defense Instructor, Israeli Air Force",
+            date: "2012 - 2014",
+            bullets: [
+              "<strong>Instruction & Leadership:</strong> Conducting professional training for emergency situations, developing public speaking skills, and delivering focused messages.",
+            ],
+          },
+        ],
+      };
+
+      const skillsData = {
+        he: [
+          "<strong>פיתוח ותוכנה:</strong> ידע מעשי ב-HTML, CSS, JavaScript, Node.js ו-SQL.",
+          "<strong>אוטומציה ודאטה:</strong> פיתוח כלי אוטומציה ב-VBA, ניתוח נתונים כמותי ובניית מודלים פיננסיים מורכבים.",
+          "<strong>כלים ותשתיות:</strong> ניהול גרסאות ב-Git, עבודה עם GitHub Pages וניהול תשתיות דרך Cloudflare.",
+          "<strong>למידה טכנולוגית:</strong> הכשרה פעילה ב-TypeScript, React, Angular, Python ו-Java.",
+          "<strong>יכולות אישיות:</strong> יכולת למידה עצמית גבוהה, ניהול פרויקטים מקצה לקצה וחשיבה לוגית-אנליטית מעמיקה.",
+        ],
+        en: [
+          "<strong>Software Development:</strong> Practical knowledge in HTML, CSS, JavaScript, Node.js, and SQL.",
+          "<strong>Automation & Data:</strong> Developing automation tools in VBA, quantitative data analysis, and building complex financial models.",
+          "<strong>Tools & Infrastructure:</strong> Version control with Git, working with GitHub Pages, and infrastructure management via Cloudflare.",
+          "<strong>Technological Learning:</strong> Active training in TypeScript, React, Angular, Python, and Java.",
+          "<strong>Personal Abilities:</strong> High self-learning capability, end-to-end project management, and deep logical-analytical thinking.",
+        ],
+      };
+
+      function setLanguage(lang) {
+        const t = translations[lang];
+        document.documentElement.dir = t.dir;
+        document.documentElement.lang = lang;
+        document.title = t.pageTitle;
+
+        // Header & Nav
+        document
+          .querySelectorAll(".lang-btn")
+          .forEach((btn) => btn.classList.remove("active"));
+        document.getElementById(`btn-${lang}`).classList.add("active");
+        document.getElementById("nav-home").textContent = t.navHome;
+        document.getElementById("nav-cover").textContent = t.navCover;
+        document.getElementById("nav-home").href = `index.html?lang=${lang}`;
+        document.getElementById("nav-cover").href =
+          `coverletter.html?lang=${lang}`;
+        document.getElementById("text-name").textContent = t.name;
+        document.getElementById("text-tagline").textContent = t.tagline;
+        document.getElementById("text-location").textContent = t.location;
+
+        // Sections
+        document.getElementById("title-profile").textContent = t.profileTitle;
+        document.getElementById("text-profile-desc").textContent =
+          t.profileDesc;
+        document.getElementById("title-experience").textContent = t.expTitle;
+        document.getElementById("title-education").textContent = t.eduTitle;
+        document.getElementById("title-military").textContent = t.milTitle;
+        document.getElementById("title-skills").textContent = t.skillsTitle;
+
+        // Lists
+        renderList("experience-list", experienceData[lang]);
+        renderList("education-list", educationData[lang]);
+        renderList("military-list", militaryData[lang]);
+
+        // Skills
+        document.getElementById("skills-list").innerHTML = skillsData[lang]
+          .map((s) => `<li>${s}</li>`)
+          .join("");
+      }
+
+      function renderList(id, data) {
+        document.getElementById(id).innerHTML = data
+          .map(
+            (item) => `
+          <div class="experience-item">
+            <div class="item-header"><strong>${item.title}</strong> <span>${item.date}</span></div>
+            <ul>${item.bullets.map((b) => `<li>${b}</li>`).join("")}</ul>
+          </div>
+        `,
+          )
+          .join("");
+      }
+
+      document.addEventListener("DOMContentLoaded", () => {
+        const urlParams = new URLSearchParams(window.location.search);
+        setLanguage(urlParams.get("lang") || "he");
+      });
+    </script>
   </body>
 </html>

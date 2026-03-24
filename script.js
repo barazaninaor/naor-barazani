@@ -56,6 +56,6 @@ document.addEventListener("DOMContentLoaded", () => {
     setLanguage(langFromUrl);
   } else {
     // אם אין פרמטר, נשאר על עברית כברירת מחדל
-    setLanguage("he");
+    setLanguage("en");
   }
 });

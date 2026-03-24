@@ -269,31 +269,89 @@ body {
 
 .item-header {
   display: flex;
-  justify-content: space-between; /* זה יוצר יישור מושלם לקצוות */
+  justify-content: space-between;
   align-items: baseline;
   margin-bottom: 10px;
+  /* מחקנו מכאן את ה-border-right וה-padding-right */
+}
+
+[dir="ltr"] .profile-text, 
+[dir="ltr"] ul {
+  text-align: left;
+  text-justify: none;
+}
+
+/* כשהדף בעברית (RTL) - קו לימין */
+[dir="rtl"] .item-header {
   border-right: 3px solid var(--wix-blue);
   padding-right: 15px;
+  border-left: none; /* לביטחון, מבטל קו שמאלי */
 }
 
-/* רשימות - יישור נקי ללא גלישה מבולגנת */
+/* כשהדף באנגלית (LTR) - קו לשמאל */
+[dir="ltr"] .item-header {
+  border-left: 3px solid var(--wix-blue);
+  padding-left: 15px;
+  border-right: none; /* לביטחון, מבטל קו ימני */
+}
+
+/* רשימות - הגדרות בסיס נקיות */
 ul {
-  padding-right: 20px;
   list-style: none;
-  text-align: right; /* מוודא שהרשימה לא נמרחת ב-justify אם היא קצרה */
+  margin: 0;
+  position: relative;
+  /* מחקנו מכאן את ה-text-align וה-padding הקבועים */
 }
 
+/* --- הגדרות לפי כיוון דף --- */
+
+/* בעברית (RTL) */
+[dir="rtl"] ul {
+  text-align: right;
+  padding-right: 20px;
+  padding-left: 0;
+}
+
+[dir="rtl"] li::before {
+  right: -15px;
+  left: auto;
+}
+
+/* באנגלית (LTR) */
+[dir="ltr"] ul {
+  text-align: left;
+  padding-left: 20px;
+  padding-right: 0;
+}
+
+/* הגדרה כללית לכל השורות ברשימה */
 li {
   position: relative;
   margin-bottom: 10px;
   color: var(--text-dim);
+  /* אנחנו לא כותבים כאן text-align כדי שה-li יירש את הכיוון מה-ul */
 }
 
+/* הגדרת הנקודה הכחולה - בסיס */
 li::before {
   content: "•";
   color: var(--wix-blue);
   position: absolute;
+  top: 0; /* כדאי להוסיף כדי שהנקודה תהיה מיושרת לגובה הטקסט */
+}
+
+/* --- הגדרות מיקום הנקודה לפי שפה --- */
+
+/* בעברית - נקודה מימין */
+[dir="rtl"] li::before {
   right: -15px;
+  left: auto;
+}
+
+/* באנגלית - נקודה משמאל */
+[dir="ltr"] li::before {
+  left: -15px;
+  right: auto;
 }
 
 /* --- Header ניווט מעוצב --- */
@@ -547,134 +605,46 @@ li::before {
   transform: translateY(-1px);
 }
 
-/* 1. הגדרת כיווניות גלובלית LTR (Left-to-Right) */
-body.en-version {
-  direction: ltr; /* מחליף את ה-RTL של הגרסה העברית */
-  text-align: left; /* יישור ברירת מחדל לשמאל */
-  unicode-bidi: embed;
-}
+/* --- Intelligent Directional Layout --- */
 
-/* 2. ניווט עליון (הדוגמה שבתמונה) */
-.en-version header {
-  flex-direction: row; /* מבטיח יישור לשמאל */
-  justify-content: flex-start; /* דוחף הכל לשמאל */
-}
+/* הגדרות כלליות לפי כיווניות */
+[dir="ltr"] { text-align: left; }
+[dir="rtl"] { text-align: right; }
 
-/* 3. כותרת הפרופיל והפרטים האישיים */
-.en-version .cv-header {
-  text-align: center; /* השם והתואר נשארים ממורכזים */
-}
-
-.en-version .tagline {
-  /* התואר הכחול "AI Full Stack Developer" נשאר ממורכז */
-  text-align: center;
-}
-
-.en-version .contact-info {
-  text-align: center; /* שורת פרטי הקשר נשארת ממורכזת */
-}
-
-/* 4. פסקת הפרופיל האישי */
-.en-version .profile-paragraph {
-  direction: ltr; /* מוודא זרימה משמאל לימין */
-  text-align: justify; /* יישור לשני הצדדים */
-
-  /* תוספות מומלצות לאנגלית: */
-  hyphens: auto; /* מאפשר שבירת מילים עם מקף כדי למנוע רווחים ענקיים */
-  line-height: 1.6; /* רווח שורה שמשפר מאוד את הקריאות ביישור כזה */
-  text-justify: inter-word; /* אלגוריתם יישור שטוב במיוחד לדפדפנים מודרניים */
-}
-
-/* הקונטיינר הראשי של הפריט */
-.en-item {
-  direction: ltr;
-  text-align: left;
-  margin-bottom: 30px;
-}
-
-/* הכותרת עם הפס הכחול בצד שמאל */
-.en-header {
+/* כותרות ניסיון והשכלה */
+.item-header {
   display: flex;
   justify-content: space-between;
   align-items: baseline;
-  border-left: 2px solid #0022ff; /* הקו עובר לשמאל */
-  border-right: none; /* מוודא שאין קו בימין */
-  padding-left: 15px; /* רווח מהקו הכחול */
-  padding-right: 0;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
+  padding: 0 15px;
 }
 
-/* הגדרות הרשימה */
-.en-list {
-  list-style: none;
-  padding-left: 25px; /* רווח בשמאל בשביל הנקודות */
-  padding-right: 0;
-}
+/* הקו הכחול - עובר צד אוטומטית */
+[dir="rtl"] .item-header { border-right: 3px solid var(--wix-blue); }
+[dir="ltr"] .item-header { border-left: 3px solid var(--wix-blue); }
 
-/* הנקודה הכחולה (הבולט) בצד שמאל */
-.en-li {
-  position: relative;
-  margin-bottom: 12px;
-  line-height: 1.5;
-}
+/* רשימות (בולטים) */
+ul { list-style: none; padding: 0; }
+[dir="rtl"] ul { padding-right: 20px; }
+[dir="ltr"] ul { padding-left: 20px; }
 
-.en-li::before {
+li { position: relative; margin-bottom: 10px; color: var(--text-dim); }
+
+/* מיקום הנקודה (•) */
+li::before {
   content: "•";
-  color: #0022ff;
-  font-weight: bold;
+  color: var(--wix-blue);
   position: absolute;
-  left: -15px; /* מציב את הנקודה משמאל לטקסט */
   top: 0;
 }
+[dir="rtl"] li::before { right: -15px; }
+[dir="ltr"] li::before { left: -15px; }
 
-/* יישור כפתור הלינק לשמאל */
-.en-item .project-link {
-  display: inline-block;
-  margin-top: 8px;
-}
-/* 5. סקשנים של ניסיון תעסוקתי והשכלה */
-.en-version .section-title {
-  /* הכותרות הכחולות (כמו "Professional Experience") */
-  text-align: center;
-}
-
-/* 6. פריט ניסיון בודד (הכותרת של התפקיד והתאריכים) */
-.en-version .experience-header {
-  flex-direction: row;
-  justify-content: space-between; /* התפקיד לשמאל, התאריכים לימין */
-  width: 100%;
-}
-
-.en-version .job-title-group {
-  text-align: left; /* התפקיד ושם החברה מיושרים לשמאל */
-}
-
-.en-version .date-range {
-  text-align: right; /* התאריכים (2025-Present) מיושרים לימין */
-}
-
-/* 7. בולטים (ה-li) של פירוט התפקיד */
-.en-version .experience-details li {
-  text-align: left;
-  direction: ltr;
-  padding-left: 0;
-  padding-right: 0;
-}
-
-/* 8. המפריד הכחול הצדי */
-.en-version .details-divider {
-  border-right: none;
-  border-left: 3px solid #0022ff; /* מעביר את הקו הכחול לצד שמאל */
-  padding-right: 0;
-  padding-left: 15px;
-  margin-right: 0;
-  margin-left: 15px;
-}
-
-/* 9. הבולטים הכחולים (הנקודה שבצד) */
-.en-version .bullet {
-  right: auto;
-  left: -18px; /* מעביר את הנקודה לצד שמאל של הטקסט */
+/* פסקת פרופיל */
+.profile-text {
+  text-align: justify;
+  text-justify: inter-word;
 }
 
 /* --- Cover Letter Page Specific Styles --- */
