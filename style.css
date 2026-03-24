@@ -731,20 +731,56 @@ li::before {
   color: var(--text-main); /* לבן לכותרות ולטקסט כללי */
 }
 
+/* הגדרות כלליות לשתי השפות */
 .cover-letter-text h1 {
-  font-size: clamp(2rem, 5vw, 2.5rem);
   color: var(--text-main);
   text-align: center;
-  margin-bottom: 40px;
+  margin-bottom: 60px; /* רווח גדול יותר לקו הכחול */
   font-weight: 800;
-  border-bottom: 3px solid var(--wix-blue); /* פס כחול מתחת לכותרת */
-  display: inline-block;
-  padding-bottom: 10px;
-  /* אפקט גרדיאנט לכותרת כמו ב-CV */
+  position: relative;
+  display: block;
+  width: 100%;
+  line-height: 1.2;
+  /* אפקט הגרדיאנט */
   background: linear-gradient(180deg, #ffffff 40%, #888888 100%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+/* --- תיקון הגודל לכל שפה בנפרד --- */
+
+/* עברית - דורשת גופן גדול יותר כדי להשתוות לאנגלית */
+html[lang="he"] .cover-letter-text h1 {
+  font-size: 3.8rem; /* הגדלה משמעותית של העברית */
+}
+
+/* אנגלית - גודל מעט קטן יותר כדי שלא יתפרס מדי */
+html[lang="en"] .cover-letter-text h1 {
+  font-size: 3.2rem;
+}
+
+/* --- הקו הכחול המושלם --- */
+.cover-letter-text h1::after {
+  content: '';
+  position: absolute;
+  bottom: -20px; /* מרחק קבוע מהטקסט */
+  left: 50%;
+  transform: translateX(-50%);
+  
+  /* אורך קבוע - זה מה שיוצר את האחידות שחיפשת */
+  width: 700px; 
+  height: 6px;
+  
+  background-color: var(--wix-blue);
+  border-radius: 10px;
+}
+
+/* התאמה למסכים קטנים (מובייל) */
+@media (max-width: 768px) {
+  html[lang="he"] .cover-letter-text h1 { font-size: 2.5rem; }
+  html[lang="en"] .cover-letter-text h1 { font-size: 2.2rem; }
+  .cover-letter-text h1::after { width: 120px; }
 }
 
 .cover-letter-text p {
