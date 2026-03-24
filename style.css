@@ -912,7 +912,9 @@ html[lang="en"] .cover-letter-text h1 {
 
 
 @media (max-width: 768px) {
-  .main-nav {
+  /* הוספנו את .en-mode .main-nav כדי שגם באנגלית זה יהיה עמודה */
+  .main-nav, 
+  .en-mode .main-nav {
     display: flex;
     flex-direction: column; /* שורה אחת לכפתורי שפה, שורה אחת ללינקים */
     gap: 12px;
