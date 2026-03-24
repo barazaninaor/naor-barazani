@@ -937,6 +937,10 @@ html[lang="en"] .cover-letter-text h1 {
     width: 100%;
   }
 
+  .nav-spacer {
+    display: none !important;
+  }
+
   /* גובה אחיד לכל הדפים כדי שלא יקפצו במעבר שפות */
   .resume-container, 
   .cover-letter-text {
