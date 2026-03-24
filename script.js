@@ -3,10 +3,9 @@ const translations = {
   en: {
     title: "Naor Barazani",
     subtitle:
-      "Full-Stack Developer Student @ Technion Continuing Education | Logic & Automation Specialist", // עדכון קטן לניסוח שדיברנו עליו
+      "Full-Stack Developer Student @ Technion Continuing Education | Logic & Automation Specialist",
     cv: "Resume",
     cover: "Cover Letter",
-    pdf: "Download PDF",
     dir: "ltr",
   },
   he: {
@@ -15,47 +14,57 @@ const translations = {
       "מפתח Full-Stack (סטודנט בטכניון - לימודי המשך) | מתמחה באוטומציה ופתרון בעיות לוגיות",
     cv: "קורות חיים",
     cover: "מכתב מקדים",
-    pdf: "הורד PDF",
     dir: "rtl",
   },
 };
 
 function setLanguage(lang) {
   const t = translations[lang];
+  if (!t) return;
 
-  // Update text content
-  document.getElementById("text-title").textContent = t.title;
-  document.getElementById("text-subtitle").textContent = t.subtitle;
-  document.getElementById("text-cv").textContent = t.cv;
-  document.getElementById("text-cover").textContent = t.cover;
-  // document.getElementById("text-pdf").textContent = t.pdf; // בטל הערה אם החזרת את כפתור ה-PDF
+  // 1. שמירה בזיכרון לטווח ארוך
+  localStorage.setItem("preferredLang", lang);
 
-  // ⬇️ הנה השדרוג הקריטי: מעדכן את הקישורים להוסיף את השפה לכתובת ⬇️
-  document.getElementById("text-cv").href = `cv.html?lang=${lang}`;
-  document.getElementById("text-cover").href = `coverletter.html?lang=${lang}`;
+  // 2. עדכון טקסטים בצורה בטוחה
+  const updateIfFound = (id, text) => {
+    const el = document.getElementById(id);
+    if (el) el.textContent = text;
+  };
 
-  // Toggle document direction
+  updateIfFound("text-title", t.title);
+  updateIfFound("text-subtitle", t.subtitle);
+  updateIfFound("text-cv", t.cv);
+  updateIfFound("text-cover", t.cover);
+
+  // 3. עדכון לינקים למעבר בין דפים
+  const cvLink = document.getElementById("text-cv");
+  const coverLink = document.getElementById("text-cover");
+  if (cvLink) cvLink.href = `cv.html?lang=${lang}`;
+  if (coverLink) coverLink.href = `coverletter.html?lang=${lang}`;
+
+  // 4. עדכון הגדרות מסמך ועיצוב
   document.documentElement.dir = t.dir;
-  document.body.className = `index-page lang-${lang}`; // מוסיף קלאס לגוף הדף לעיצובים ספציפיים
+  document.documentElement.lang = lang;
+  document.body.className = `index-page lang-${lang}`;
 
-  // Manage active state of language buttons
+  // 5. עדכון מצב כפתורים (Active)
   document
     .querySelectorAll(".lang-btn")
     .forEach((btn) => btn.classList.remove("active"));
-  document.getElementById(`btn-${lang}`).classList.add("active");
+  const activeBtn = document.getElementById(`btn-${lang}`);
+  if (activeBtn) activeBtn.classList.add("active");
+
+  // 6. ניקוי ה-URL מהפרמטר המציק (?lang=...) בלי לרענן את הדף
+  window.history.replaceState({}, document.title, window.location.pathname);
 }
 
-// קוד שירוץ אוטומטית כשהדף נטען
 document.addEventListener("DOMContentLoaded", () => {
-  // בדיקה אם יש פרמטר lang בכתובת ה-URL
   const urlParams = new URLSearchParams(window.location.search);
   const langFromUrl = urlParams.get("lang");
+  const savedLang = localStorage.getItem("preferredLang");
 
-  // אם נמצאה שפה בכתובת והיא קיימת במילון שלנו, נפעיל אותה
-  if (langFromUrl && translations[langFromUrl]) {
-    setLanguage(langFromUrl);
-  } else {
-    // אם אין פרמטר, נשאר על עברית כברירת מחדל
-    setLanguage("en");
-  }
+  // סדר עדיפויות: URL -> זיכרון -> עברית
+  let finalLang = langFromUrl || savedLang || "he";
+
+  setLanguage(finalLang);
 });

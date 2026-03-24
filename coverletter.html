@@ -4,6 +4,17 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Naor Barazani | Cover Letter</title>
+
+    <script>
+      (function () {
+        const savedLang = localStorage.getItem("preferredLang");
+        const urlParams = new URLSearchParams(window.location.search);
+        const lang = urlParams.get("lang") || savedLang || "he";
+        document.documentElement.dir = lang === "en" ? "ltr" : "rtl";
+        document.documentElement.lang = lang;
+      })();
+    </script>
+
     <link rel="stylesheet" href="style.css" />
     <link
       href="https://fonts.googleapis.com/css2?family=Wix+Madefor+Display:wght@400;700;800&display=swap"
@@ -13,11 +24,11 @@
   <body class="subpage">
     <header class="main-nav">
       <div class="lang-switch">
-        <button id="btn-he" class="lang-btn active" onclick="switchLang('he')">
-          עברית
-        </button>
-        <button id="btn-en" class="lang-btn" onclick="switchLang('en')">
+        <button id="btn-en" class="lang-btn" onclick="setLanguage('en')">
           English
+        </button>
+        <button id="btn-he" class="lang-btn" onclick="setLanguage('he')">
+          עברית
         </button>
       </div>
 
@@ -148,51 +159,50 @@
         he: { home: "דף הבית", cv: "קורות חיים" },
       };
 
-      function switchLang(lang) {
+      function setLanguage(lang) {
+        // 1. שמירה בזיכרון
+        localStorage.setItem("preferredLang", lang);
+
+        // 2. הגדרות אלמנטים
         const contentHe = document.getElementById("content-he");
         const contentEn = document.getElementById("content-en");
-        const btnHe = document.getElementById("btn-he");
-        const btnEn = document.getElementById("btn-en");
         const navHome = document.getElementById("nav-home");
         const navCv = document.getElementById("nav-cv");
 
-        // עדכון כיוון דף וקלאסים
+        // 3. עדכון כיוון דף
         document.documentElement.dir = lang === "en" ? "ltr" : "rtl";
+        document.documentElement.lang = lang;
         document.body.className = lang === "en" ? "subpage en-mode" : "subpage";
 
-        // הצגת תוכן
+        // 4. החלפת תוכן וכפתורים
         if (lang === "en") {
-          if (contentHe)
-            contentHe.style.setProperty("display", "none", "important");
-          if (contentEn)
-            contentEn.style.setProperty("display", "block", "important");
-          btnEn.classList.add("active");
-          btnHe.classList.remove("active");
+          if (contentHe) contentHe.style.display = "none";
+          if (contentEn) contentEn.style.display = "block";
+          document.getElementById("btn-en")?.classList.add("active");
+          document.getElementById("btn-he")?.classList.remove("active");
         } else {
-          if (contentHe)
-            contentHe.style.setProperty("display", "block", "important");
-          if (contentEn)
-            contentEn.style.setProperty("display", "none", "important");
-          btnHe.classList.add("active");
-          btnEn.classList.remove("active");
+          if (contentHe) contentHe.style.display = "block";
+          if (contentEn) contentEn.style.display = "none";
+          document.getElementById("btn-he")?.classList.add("active");
+          document.getElementById("btn-en")?.classList.remove("active");
         }
 
-        // עדכון טקסט וקישורים בתפריט - כאן התיקון הקריטי
-        if (navHome) {
-          navHome.textContent = navTranslations[lang].home;
-          navHome.setAttribute("href", `index.html?lang=${lang}`);
-        }
-        if (navCv) {
-          navCv.textContent = navTranslations[lang].cv;
-          navCv.setAttribute("href", `cv.html?lang=${lang}`);
-        }
+        // 5. עדכון תפריט ניווט
+        if (navHome) navHome.textContent = navTranslations[lang].home;
+        if (navCv) navCv.textContent = navTranslations[lang].cv;
+
+        // 6. ניקוי URL
+        window.history.replaceState({}, "", window.location.pathname);
       }
 
       // הפעלה בטעינה
       document.addEventListener("DOMContentLoaded", () => {
         const urlParams = new URLSearchParams(window.location.search);
-        const lang = urlParams.get("lang") || "he";
-        switchLang(lang);
+        const langFromUrl = urlParams.get("lang");
+        const savedLang = localStorage.getItem("preferredLang");
+        const finalLang = langFromUrl || savedLang || "he";
+
+        setLanguage(finalLang);
       });
     </script>
   </body>
