@@ -494,33 +494,6 @@ li::before {
   box-shadow: 0 0 15px var(--wix-glow);
 }
 
-/* התאמה לנייד - גרסה משודרגת */
-@media (max-width: 768px) {
-  .main-nav {
-    flex-direction: column; /* גורם לשפות ולניווט להיות אחד מתחת לשני */
-    gap: 15px;
-    padding: 15px 10px;
-    height: auto; /* מאפשר ל-header לגדול */
-    align-items: center;
-  }
-
-  .nav-links {
-    gap: 15px;
-    justify-content: center;
-    width: 100%;
-  }
-
-  .nav-item {
-    font-size: 0.9rem;
-    white-space: nowrap; /* מונע מהטקסט של הלינקים להישבר בצורה מכוערת */
-  }
-
-  .language-switcher {
-    justify-content: center;
-    width: 100%;
-  }
-}
-
 /* עיצוב כפתור הלינק לפרויקט */
 .project-link {
   display: inline-flex;
@@ -872,11 +845,6 @@ html[lang="en"] .cover-letter-text h1 {
     line-height: 1.3;
   }
 
-  /* הגדלת הריווח לקונטיינר הראשי כדי שהטקסט לא ייצמד לקצוות */
-  .resume-container {
-    padding: 30px 20px;
-    margin: 20px 10px;
-  }
 
   /* התאמת כפתור ההורדה לנייד */
   .resume-header {
@@ -940,4 +908,38 @@ html[lang="en"] .cover-letter-text h1 {
   border-bottom: 1px solid rgba(255, 255, 255, 0.8);
   text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
   opacity: 0.9;
+}
+
+
+@media (max-width: 768px) {
+  .main-nav {
+    display: flex;
+    flex-direction: column; /* שורה אחת לכפתורי שפה, שורה אחת ללינקים */
+    gap: 12px;
+    padding: 15px 10px;
+    height: auto;
+    align-items: center;
+  }
+
+  /* שים לב - הוספתי את שני השמות ליתר ביטחון */
+  .lang-switch, 
+  .language-switcher {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    gap: 10px;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    width: 100%;
+  }
+
+  /* גובה אחיד לכל הדפים כדי שלא יקפצו במעבר שפות */
+  .resume-container, 
+  .cover-letter-text {
+    margin-top: 150px !important; 
+  }
 }
