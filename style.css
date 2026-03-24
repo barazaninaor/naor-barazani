@@ -826,15 +826,29 @@ html[lang="en"] .cover-letter-text h1 {
 /* התאמה לנייד */
 @media (max-width: 768px) {
   .cover-letter-text {
-    margin: 80px 15px 20px 15px;
+    margin: 140px 15px 20px 15px; 
     padding: 30px;
-    text-align: right; /* ביטול ה-justify בנייד */
+    text-align: right;
   }
 
   .cover-letter-text h1 {
     font-size: 1.8rem;
   }
+
+
+.resume-container {
+    margin-top: 140px !important; 
+    padding: 20px; /* ריווח פנימי כדי שהטקסט לא ייגע בקצוות המסך */
+    width: 95%;
+  }
+
+  /* אם יש לך כותרת ראשית בתוך הרזומה (כמו השם שלך) */
+  .resume-container h1 {
+    font-size: 2rem !important;
+    margin-bottom: 25px;
+  }
 }
+  
 
 /* --- Mobile Responsive Fixes --- */
 @media (max-width: 768px) {
